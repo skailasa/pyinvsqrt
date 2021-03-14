@@ -1,9 +1,10 @@
 import os
 
 from setuptools import setup, find_packages
+from setuptools.extension import Extension
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-PATH_VERSION = os.path.join(HERE, 'pyinvsqrt', '__version__.py')
+PATH_VERSION = os.path.join(HERE, 'src', '__version__.py')
 
 ABOUT = {}
 
@@ -15,10 +16,18 @@ requirements = [
 ]
 
 
+c_module = Extension(
+    'invsqrtc',
+    sources=['src/main.c'],
+    include_dirs=['/usr/local/lib']
+)
+
+
 setup(
     name=ABOUT['__title__'],
     version=ABOUT['__version__'],
     description=ABOUT['__description__'],
+    ext_modules=[c_module],
     license="BSD",
     author="Srinath Kailasa",
     author_email='srinathkailasa@gmail.com',
