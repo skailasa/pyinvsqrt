@@ -12,7 +12,8 @@ with open(PATH_VERSION, mode='r', encoding='utf-8') as f:
     exec(f.read(), ABOUT)
 
 requirements = [
-    'numpy'
+    'numpy',
+    'pytest'
 ]
 
 
