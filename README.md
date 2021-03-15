@@ -29,6 +29,6 @@ y = invsqrt(x)
 
 ## Benchmark
 
-Compared with a pure Numpy (BLAS backend) inverse square root, pyinvqrt is almost 400% faster, and almost 35% Faster when compared to a Numba-fied implementation.
+Compared with a pure Numpy (BLAS backend) inverse square root, pyinvqrt is almost 400% faster, and almost 25% compared to a Numba-fied implementation.
 
 ![](static/benchmark.png)
